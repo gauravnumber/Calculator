@@ -26,7 +26,12 @@
 			display: grid;
 			grid-template-columns: auto auto auto;
 			grid-template-areas: 
-				"input input clear";
+				"input input clear"
+				"auto auto auto"
+				"auto auto auto"
+				"auto auto auto"
+				"equal equal equal"
+				;
 			/*align-items: center;*/
 			/*justify-content: center;*/
 			margin: auto;
@@ -45,6 +50,9 @@
 			/*grid-area: 1 / 2 / span 1 / span 1;*/
 		}
 
+		.calculator .equal {
+			grid-area: equal;
+		}
 		.calculator .item {
 			background-color: rgba(255, 255, 255, 0.6);
 			text-align: center;
@@ -70,6 +78,7 @@
 			<div class="item">7</div>
 			<div class="item">8</div>
 			<div class="item">9</div>
+			<div class="item equal" style="font-size: 60px;">=</div>
 		</div>
 	</div>
 </body>
