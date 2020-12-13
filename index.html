@@ -96,14 +96,18 @@
 	<div class="container">
 		<div class="calculator">
 			<div class="item">
-				<input type="text" autofocus>
+				<input
+					id="input"
+					type="number" 
+					autofocus
+				>
 			</div>
 			<div class="item">Clear</div>
-			<div class="item">1</div>
-			<div class="item">2</div>
-			<div class="item">3</div>
+			<div class="item" onclick="one()">1</div>
+			<div class="item" onclick="two()">2</div>
+			<div class="item" onclick="three()">3</div>
 			<div class="item div">/</div>
-			<div class="item">4</div>
+			<div class="item" onclick="four()">4</div>
 			<div class="item">5</div>
 			<div class="item">6</div>
 			<div class="item mul">*</div>
@@ -117,8 +121,25 @@
 	</div>
 	<script>
 		function one() {
-			document.getElementById('input')
+			let x = document.getElementById('input');
+			x.value = 1;
 		}
+
+		function two() {
+			let x = document.getElementById('input');
+			x.value = 2;
+		}
+
+		function three() {
+			let x = document.getElementById('input');
+			x.value = 3;
+		}
+
+		function four() {
+			let x = document.getElementById('input');
+			x.value = 4;
+		}
+
 	</script>
 </body>
 </html>
