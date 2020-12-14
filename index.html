@@ -30,7 +30,7 @@
 				"auto auto auto div"
 				"auto auto auto mul"
 				"auto auto auto min"
-				"equal equal equal plus"
+				"equal equal zero plus"
 				;
 			/*align-items: center;*/
 			/*justify-content: center;*/
@@ -77,11 +77,16 @@
 			grid-area: plus;
 		}
 
+		.zero {
+			grid-area: zero;
+		}
+
 
 		.calculator .equal {
 			grid-area: equal;
 		}
 		.calculator .item {
+			cursor: pointer;
 			background-color: rgba(255, 255, 255, 0.6);
 			text-align: center;
 			vertical-align: center;
@@ -97,6 +102,7 @@
 		<div class="calculator">
 			<div class="item">
 				<input
+					class="input"
 					id="input"
 					type="number" 
 					autofocus
@@ -106,20 +112,28 @@
 			<div class="item" onclick="one()">1</div>
 			<div class="item" onclick="two()">2</div>
 			<div class="item" onclick="three()">3</div>
-			<div class="item div">/</div>
+			<div class="item div" onclick="div()">/</div>
 			<div class="item" onclick="four()">4</div>
-			<div class="item">5</div>
-			<div class="item">6</div>
-			<div class="item mul">*</div>
-			<div class="item">7</div>
-			<div class="item">8</div>
-			<div class="item">9</div>
-			<div class="item min">-</div>
-			<div class="item equal" style="font-size: 60px;">=</div>
-			<div class="item plus">+</div>
+			<div class="item" onclick="five()">5</div>
+			<div class="item" onclick="six()">6</div>
+			<div class="item mul" onclick="mul()">*</div>
+			<div class="item" onclick="seven()">7</div>
+			<div class="item" onclick="eight()">8</div>
+			<div class="item" onclick="nine()">9</div>
+			<div class="item min" onclick="min()">-</div>
+			<div class="item equal" onclick="equal()" style="font-size: 60px;">=</div>
+			<div class="item zero">0</div>
+			<div class="item plus" onclick="plus()">+</div>
 		</div>
 	</div>
 	<script>
+		let input = document.getElementById('input');
+		input.value = 0;
+		
+		function plus() {
+			let x = document.getElementById('input');
+			x.value = x.value;
+		}
 		function one() {
 			let x = document.getElementById('input');
 			x.value = 1;
@@ -138,6 +152,36 @@
 		function four() {
 			let x = document.getElementById('input');
 			x.value = 4;
+		}
+
+		function five() {
+			let x = document.getElementById('input');
+			x.value = 5;
+		}
+
+		function six() {
+			let x = document.getElementById('input');
+			x.value = 6;
+		}
+
+		function seven() {
+			let x = document.getElementById('input');
+			x.value = 7;
+		}
+
+		function eight() {
+			let x = document.getElementById('input');
+			x.value = 8;
+		}
+
+		function nine() {
+			let x = document.getElementById('input');
+			x.value = 9;
+		}
+
+		function zero() {
+			let x = document.getElementById('input');
+			x.value = parseInt(0);
 		}
 
 	</script>
