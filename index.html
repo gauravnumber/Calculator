@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		* {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
 			box-sizing: border-box;
 		}
 
@@ -44,10 +45,16 @@
 			/*grid-area: 1 / 1 / span 2 / span 2;*/
 			grid-area: input;
 			padding: 0;
-			font-size: 50px;
+			font-size: 80px;
+			text-align: right;
 		}
 
-		input {
+/*		.input {
+			margin: 0;
+			padding: 0;
+		}
+*/
+/*		input {
 			padding: 0;
 			margin: 0;
 			width: 100%;
@@ -58,7 +65,7 @@
 		input:hover {
 			border: 0;
 		}
-
+*/
 		.calculator .item:nth-child(2) {
 			grid-area: clear;
 			/*grid-area: 1 / 2 / span 1 / span 1;*/
@@ -97,93 +104,97 @@
 		}
 	</style>
 </head>
+
 <body>
-	<div class="container">
-		<div class="calculator">
-			<div class="item">
-				<input
-					class="input"
-					id="input"
-					type="number" 
-					autofocus
-				>
-			</div>
-			<div class="item">Clear</div>
-			<div class="item" onclick="one()">1</div>
-			<div class="item" onclick="two()">2</div>
-			<div class="item" onclick="three()">3</div>
-			<div class="item div" onclick="div()">/</div>
-			<div class="item" onclick="four()">4</div>
-			<div class="item" onclick="five()">5</div>
-			<div class="item" onclick="six()">6</div>
-			<div class="item mul" onclick="mul()">*</div>
-			<div class="item" onclick="seven()">7</div>
-			<div class="item" onclick="eight()">8</div>
-			<div class="item" onclick="nine()">9</div>
-			<div class="item min" onclick="min()">-</div>
-			<div class="item equal" onclick="equal()" style="font-size: 60px;">=</div>
-			<div class="item zero">0</div>
-			<div class="item plus" onclick="plus()">+</div>
-		</div>
-	</div>
-	<script>
-		let input = document.getElementById('input');
-		input.value = 0;
-		
-		function plus() {
-			let x = document.getElementById('input');
-			x.value = x.value;
-		}
-		function one() {
-			let x = document.getElementById('input');
-			x.value = 1;
-		}
+    <div class="container">
+        <div class="calculator">
+            <div
+            	class="item" 
+            >
+            	<span
+            		id="input"
+            		class="input"
+            	>
+            		
+            	</span>
+            </div>
+            <div class="item">Clear</div>
+            <div class="item" onclick="one()">1</div>
+            <div class="item" onclick="two()">2</div>
+            <div class="item" onclick="three()">3</div>
+            <div class="item div" onclick="div()">/</div>
+            <div class="item" onclick="four()">4</div>
+            <div class="item" onclick="five()">5</div>
+            <div class="item" onclick="six()">6</div>
+            <div class="item mul" onclick="mul()">*</div>
+            <div class="item" onclick="seven()">7</div>
+            <div class="item" onclick="eight()">8</div>
+            <div class="item" onclick="nine()">9</div>
+            <div class="item min" onclick="min()">-</div>
+            <div class="item equal" onclick="equal()" style="font-size: 60px;">=</div>
+            <div class="item zero" onclick="zero()">0</div>
+            <div class="item plus" onclick="plus()">+</div>
+        </div>
+    </div>
+    <script>
+    let input = document.getElementById('input');
+    // input.innerHTML = 0;
 
-		function two() {
-			let x = document.getElementById('input');
-			x.value = 2;
-		}
+    function plus() {
+        let x = document.getElementById('input');
+        x.innerHTML = x.innerHTML;
+    }
 
-		function three() {
-			let x = document.getElementById('input');
-			x.value = 3;
-		}
+    function one() {
+        let x = document.getElementById('input');
+        x.innerHTML += 1;
+    }
 
-		function four() {
-			let x = document.getElementById('input');
-			x.value = 4;
-		}
+    function two() {
+        let x = document.getElementById('input');
+        x.innerHTML += 2;
+    }
 
-		function five() {
-			let x = document.getElementById('input');
-			x.value = 5;
-		}
+    function three() {
+        let x = document.getElementById('input');
+        x.innerHTML += 3;
+    }
 
-		function six() {
-			let x = document.getElementById('input');
-			x.value = 6;
-		}
+    function four() {
+        let x = document.getElementById('input');
+        x.innerHTML += 4;
+    }
 
-		function seven() {
-			let x = document.getElementById('input');
-			x.value = 7;
-		}
+    function five() {
+        let x = document.getElementById('input');
+        x.innerHTML += 5;
+    }
 
-		function eight() {
-			let x = document.getElementById('input');
-			x.value = 8;
-		}
+    function six() {
+        let x = document.getElementById('input');
+        x.innerHTML += 6;
+    }
 
-		function nine() {
-			let x = document.getElementById('input');
-			x.value = 9;
-		}
+    function seven() {
+        let x = document.getElementById('input');
+        x.innerHTML += 7;
+    }
 
-		function zero() {
-			let x = document.getElementById('input');
-			x.value = parseInt(0);
-		}
+    function eight() {
+        let x = document.getElementById('input');
+        x.innerHTML += 8;
+    }
 
-	</script>
+    function nine() {
+        let x = document.getElementById('input');
+        x.innerHTML += 9;
+    }
+
+    function zero() {
+        let x = document.getElementById('input');
+        x.innerHTML += '0';
+    }
+    </script>
 </body>
+
 </html>
