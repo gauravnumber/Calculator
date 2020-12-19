@@ -131,26 +131,68 @@
             <div class="item" onclick="eight()">8</div>
             <div class="item" onclick="nine()">9</div>
             <div class="item min" onclick="min()">-</div>
-            <div class="item equal" onclick="equal()" style="font-size: 60px;">=</div>
+            <div class="item equal" onclick="equal()" styl_e="font-size: 60px;">=</div>
             <div class="item zero" onclick="zero()">0</div>
             <div class="item plus" onclick="plus()">+</div>
         </div>
     </div>
     <script>
     let select = 0;
+    let _plus = false;
+    let _min = false;
+    let _div = false;
+    let _mul = false;
 
-    function plus() {
+    function collect() {
         let x = document.getElementById('input');
         select = parseInt(x.innerHTML);
         x.innerHTML = '';
-        let plus = true;
     }
+
+    function plus() {
+    	collect();
+        _plus = true;
+    }
+
+    function min() {
+    	collect();
+        _min = true;
+    }
+
+    function div() {
+    	collect();
+        _div = true;
+    }
+
+    function mul() {
+    	collect();
+        _mul = true;
+    }
+
 
     function equal() {
         let x = document.getElementById('input');
-        if (plus) {
+        if (_plus) {
         	x.innerHTML = parseInt(x.innerHTML) + select;
-        	plus = false;
+        	_plus = false;
+        } 
+        else
+    	
+        if (_min) {
+        	x.innerHTML = select - parseInt(x.innerHTML);
+        	_min = false;
+        }
+        else
+    	
+        if (_div) {
+            x.innerHTML = select / parseInt(x.innerHTML);
+        	_div = false;
+        }
+        else
+    	
+        if (_mul) {
+            x.innerHTML = select * parseInt(x.innerHTML);
+        	_mul = false;
         }
     	
     }
