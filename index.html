@@ -137,24 +137,27 @@
         </div>
     </div>
     <script>
-    // let input = document.getElementById('input');
-    // input.innerHTML = 0;
     let select = 0;
 
     function plus() {
         let x = document.getElementById('input');
         select = parseInt(x.innerHTML);
-        x.innerHTML = '0';
+        x.innerHTML = '';
         let plus = true;
+    }
+
+    function equal() {
+        let x = document.getElementById('input');
+        if (plus) {
+        	x.innerHTML = parseInt(x.innerHTML) + select;
+        	plus = false;
+        }
+    	
     }
 
     function one() {
         let x = document.getElementById('input');
         x.innerHTML += 1;
-
-        if (plus) {
-        	x.innerHTML = parseInt(x.innerHTML) + select;
-        }
     }
 
     function two() {
