@@ -118,7 +118,7 @@
             		
             	</span>
             </div>
-            <div class="item">Clear</div>
+            <div class="item" onclick="clear()">Clear</div>
             <div class="item" onclick="one()">1</div>
             <div class="item" onclick="two()">2</div>
             <div class="item" onclick="three()">3</div>
@@ -137,17 +137,24 @@
         </div>
     </div>
     <script>
-    let input = document.getElementById('input');
+    // let input = document.getElementById('input');
     // input.innerHTML = 0;
+    let select = 0;
 
     function plus() {
         let x = document.getElementById('input');
-        x.innerHTML = x.innerHTML;
+        select = parseInt(x.innerHTML);
+        x.innerHTML = '0';
+        let plus = true;
     }
 
     function one() {
         let x = document.getElementById('input');
         x.innerHTML += 1;
+
+        if (plus) {
+        	x.innerHTML = parseInt(x.innerHTML) + select;
+        }
     }
 
     function two() {
@@ -193,6 +200,11 @@
     function zero() {
         let x = document.getElementById('input');
         x.innerHTML += '0';
+    }
+
+    function clear() {
+        let x = document.getElementById('input');
+        x.innerHTML = '0';
     }
     </script>
 </body>
