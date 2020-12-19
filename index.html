@@ -118,7 +118,7 @@
             		
             	</span>
             </div>
-            <div class="item">Clear</div>
+            <div class="item" onclick="clear()">Clear</div>
             <div class="item" onclick="one()">1</div>
             <div class="item" onclick="two()">2</div>
             <div class="item" onclick="three()">3</div>
@@ -131,18 +131,70 @@
             <div class="item" onclick="eight()">8</div>
             <div class="item" onclick="nine()">9</div>
             <div class="item min" onclick="min()">-</div>
-            <div class="item equal" onclick="equal()" style="font-size: 60px;">=</div>
+            <div class="item equal" onclick="equal()" styl_e="font-size: 60px;">=</div>
             <div class="item zero" onclick="zero()">0</div>
             <div class="item plus" onclick="plus()">+</div>
         </div>
     </div>
     <script>
-    let input = document.getElementById('input');
-    // input.innerHTML = 0;
+    let select = 0;
+    let _plus = false;
+    let _min = false;
+    let _div = false;
+    let _mul = false;
+
+    function collect() {
+        let x = document.getElementById('input');
+        select = parseInt(x.innerHTML);
+        x.innerHTML = '';
+    }
 
     function plus() {
+    	collect();
+        _plus = true;
+    }
+
+    function min() {
+    	collect();
+        _min = true;
+    }
+
+    function div() {
+    	collect();
+        _div = true;
+    }
+
+    function mul() {
+    	collect();
+        _mul = true;
+    }
+
+
+    function equal() {
         let x = document.getElementById('input');
-        x.innerHTML = x.innerHTML;
+        if (_plus) {
+        	x.innerHTML = parseInt(x.innerHTML) + select;
+        	_plus = false;
+        } 
+        else
+    	
+        if (_min) {
+        	x.innerHTML = select - parseInt(x.innerHTML);
+        	_min = false;
+        }
+        else
+    	
+        if (_div) {
+            x.innerHTML = select / parseInt(x.innerHTML);
+        	_div = false;
+        }
+        else
+    	
+        if (_mul) {
+            x.innerHTML = select * parseInt(x.innerHTML);
+        	_mul = false;
+        }
+    	
     }
 
     function one() {
@@ -193,6 +245,11 @@
     function zero() {
         let x = document.getElementById('input');
         x.innerHTML += '0';
+    }
+
+    function clear() {
+        let x = document.getElementById('input');
+        x.innerHTML = '0';
     }
     </script>
 </body>
